@@ -1,0 +1,45 @@
+<!-- home.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermercado - Home</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<header>
+    <h1>Supermercado</h1>
+    <div id="carrinho-container">
+        <button id="btt-ver-carrinho">
+            <i class="fas fa-shopping-cart"></i>
+        </button>
+    </div>
+</header>
+
+<main>
+    <section class="promocoes">
+        <h2>Promoções do Dia</h2>
+        <ul id="lista-produtos" class="card-container">
+            <!-- Produtos serão carregados aqui -->
+        </ul>
+    </section>
+</main>
+
+<!-- Modal do Carrinho -->
+<div id="modal-carrinho" class="modal">
+    <div class="modal-content">
+        <span class="close" id="fechar-carrinho">&times;</span>
+        <h2>Carrinho de Compras</h2>
+        <ul id="lista-carrinho">
+            <!-- Itens do carrinho serão carregados aqui -->
+        </ul>
+        <p id="total-carrinho">Total: R$ 0,00</p>
+        <button id="finalizar-compra" class="btn-primary">Finalizar Compra</button>
+    </div>
+</div>
+
+<script src="../js/home.js"></script>
+</body>
+</html>
