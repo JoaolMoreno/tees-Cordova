@@ -30,7 +30,7 @@ function productScreen() {
                             <img src="${product.image}" alt="${product.name}" style="width: 100%; border-radius: 8px;">
                             <h2>${product.name}</h2>
                             <p>${product.description}</p>
-                            <p>Preço: $${product.price.toFixed(2)}</p>
+                            <p>Preço: R$${product.price.toFixed(2)}</p>
                             <p class="quantity-selector">
                                 Quantidade:
                                 <ons-button id="decreaseQty">-</ons-button>
