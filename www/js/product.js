@@ -23,15 +23,20 @@ function productScreen() {
 }
 
 function addToCart(productId) {
-    db.getCartItems().then(items => {
-        let item = items.find(i => i.productId === productId);
-        if (item) {
-            item.quantity += 1;
-        } else {
-            item = { productId: productId, quantity: 1 };
-        }
-        db.updateCartItem(item).then(() => {
-            alert('Product added to cart!');
+    db.getProduct(productId).then(product => {
+        db.getCartItems().then(items => {
+            let item = items.find(i => i.productId === productId);
+            if (item) {
+                item.quantity += 1;
+            } else {
+                item = { productId: productId, quantity: 1 };
+            }
+            db.updateCartItem(item).then(() => {
+                ons.notification.toast('Produto adicionado ao carrinho!', { timeout: 2000 });
+                // Envia notificação local
+                notifyItemAdded(product.name);
+            });
         });
     });
 }
+
