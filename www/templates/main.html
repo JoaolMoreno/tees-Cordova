@@ -1,5 +1,10 @@
 <ons-page>
     <ons-toolbar>
+        <div class="left">
+            <ons-toolbar-button onclick="logout()">
+                <ons-icon icon="md-power"></ons-icon>
+            </ons-toolbar-button>
+        </div>
         <div class="center">Market App</div>
         <div class="right">
             <ons-toolbar-button onclick="location.hash = '#/cart'">
@@ -7,5 +12,7 @@
             </ons-toolbar-button>
         </div>
     </ons-toolbar>
-    <ons-list id="productList"></ons-list>
+    <div class="product-list">
+        <ons-list id="productList"></ons-list>
+    </div>
 </ons-page>

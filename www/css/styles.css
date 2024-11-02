@@ -1,61 +1,265 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+body, ons-page {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
-header {
+/* Estilização do toolbar */
+ons-toolbar {
+    background-color: #b71c1c;
+    color: #fff;
+}
+
+/* Estilização dos botões */
+ons-button {
     background-color: #d32f2f;
-    color: white;
-    padding: 15px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 500;
+}
+
+ons-button[modifier~="outline"] {
+    background-color: transparent;
+    border: 1px solid #d32f2f;
+    color: #d32f2f;
+}
+
+/* Botões no estado desabilitado */
+ons-button[disabled] {
+    opacity: 0.6;
+}
+
+/* Estilização dos cards */
+ons-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 16px;
+}
+
+/* Títulos e textos */
+h1, h2, h3, h4, h5, h6 {
+    color: #b71c1c;
+}
+
+p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Estilização das listas */
+ons-list-item {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+ons-list-item .center {
+    font-size: 16px;
+}
+
+ons-list-item .list-item__title {
+    font-weight: 500;
+}
+
+ons-list-item .list-item__subtitle {
+    color: #999;
+    font-size: 14px;
+}
+
+/* Estilização dos inputs */
+ons-input input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    width: 100%;
+    font-size: 16px;
+}
+
+/* Ajustes nos ícones */
+ons-icon {
+    color: #000000;
+}
+
+/* Estilização dos toasts e diálogos */
+ons-toast, ons-alert-dialog {
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Estilização do botão de voltar */
+ons-back-button {
+    color: #fff;
+}
+
+/* Customização para o OnsenUI */
+ons-toolbar-button {
+    color: #ff0000;
+}
+
+/* Ajustes nos containers */
+.container {
+    padding: 16px;
+}
+
+/* Centralizar o card de login */
+.login-card {
+    max-width: 320px;
+    margin: 40px auto;
     text-align: center;
 }
 
-.card {
-    background-color: white;
-    margin: 15px;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.login-card h2 {
+    margin-bottom: 24px;
 }
 
-.button {
-    background-color: #d32f2f;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+.login-card ons-input {
+    margin-bottom: 16px;
 }
 
-.button:disabled {
-    background-color: #e57373;
+.login-card ons-button {
+    width: 100%;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    background-color: #c62828;
-    padding: 10px;
-    color: white;
-}
-
-.navbar a {
-    color: white;
-    text-decoration: none;
-}
-
+/* Estilo para a lista de produtos */
 .product-list {
+    padding: 8px;
+}
+
+.product-item ons-list-item {
+    margin-bottom: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.product-item img {
+    border-radius: 4px;
+}
+
+.product-item .list-item__title {
+    font-size: 18px;
+    color: #333;
+}
+
+.product-item .list-item__subtitle {
+    color: #d32f2f;
+    font-weight: 500;
+}
+
+/* Estilo para a imagem do produto */
+.product-details img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+/* Estilo para o título e descrição */
+.product-details h2 {
+    margin-bottom: 8px;
+}
+
+.product-details p {
+    margin-bottom: 16px;
+}
+
+/* Estilo para a seleção de quantidade */
+.quantity-selector {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
 }
 
-.product-card {
-    width: 45%;
-    margin: 10px;
+.quantity-selector ons-button {
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    text-align: center;
+    padding: 0;
+    margin: 0 8px;
 }
 
-input[type="number"] {
-    width: 50px;
+.quantity-selector span {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Estilo para os itens do carrinho */
+.cart-item ons-list-item {
+    margin-bottom: 8px;
+    border-radius: 8px;
+}
+
+.cart-item .list-item__title {
+    font-size: 18px;
+    color: #333;
+}
+
+.cart-item .list-item__subtitle {
+    color: #555;
+    font-size: 14px;
+}
+
+.cart-item .right ons-button {
+    margin-left: 4px;
+}
+
+/* Personalizando o ons-toolbar */
+ons-toolbar {
+    background-color: #b71c1c;
+    border-bottom: none;
+}
+
+/* Estilizando o ons-list-item quando pressionado */
+ons-list-item:active {
+    background-color: #f5f5f5;
+}
+
+/* Estilizando o ons-input */
+ons-input input {
+    border: 1px solid #ccc;
+    padding: 8px;
+    font-size: 16px;
+}
+
+/* Personalizando o ons-button */
+ons-button {
+    background-color: #d32f2f;
+    color: #fff;
+}
+
+ons-button[modifier~="large"] {
+    font-size: 18px;
+    padding: 12px 24px;
+}
+
+ons-button:hover {
+    opacity: 0.9;
+}
+
+ons-button:active {
+    background-color: #c62828;
+}
+
+/* Sombras nos cards e botões */
+ons-card, ons-button {
+    transition: box-shadow 0.2s ease;
+}
+
+ons-card:hover, ons-button:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Transição em elementos interativos */
+ons-list-item {
+    transition: background-color 0.2s ease;
+}
+
+/* Espaçamento nos containers */
+.container, .product-list {
+    padding: 16px;
+}
+
+/* Margens entre os elementos */
+ons-card, ons-list-item {
+    margin-bottom: 16px;
 }
