@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 <head>
   <meta charset="UTF-8">
-  <title>Supermercado - App</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Inclua seu CSS aqui -->
-  <link rel="stylesheet" href="./css/styles.css">
+  <title>Market App</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/onsenui/css/onsen-css-components.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/onsenui/js/onsenui.min.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<!-- Div onde o conteúdo dinâmico será carregado -->
-<div id="content"></div>
+<ons-page id="app"></ons-page>
 
-<!-- Script do Cordova (será ignorado se não estiver em ambiente Cordova) -->
-<script src="cordova.js"></script>
-
-<!-- Seu script principal -->
-<script src="./js/db.js"></script>
-<script src="./js/index.js"></script>
+<script src="js/db.js"></script>
+<script src="js/login.js"></script>
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/product.js"></script>
+<script src="js/router.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
