@@ -9,10 +9,14 @@ function loginScreen() {
                 if (username) {
                     db.addUser({ username: username }).then(() => {
                         localStorage.setItem('username', username);
+
+                        // Adiciona uma vibração suave após o login
+                        navigator.vibrate(100); // Vibra por 100ms
+
                         location.hash = '#/main';
                     });
                 } else {
-                    alert('Please enter a username.');
+                    ons.notification.alert('Por favor, insira um nome de usuário.');
                 }
             });
         });

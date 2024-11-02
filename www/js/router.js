@@ -20,6 +20,13 @@ function router() {
 window.addEventListener('hashchange', router);
 window.addEventListener('load', () => {
     db.open().then(() => {
+        const username = localStorage.getItem('username');
+        if (username) {
+            location.hash = '#/main';
+        } else {
+            location.hash = '#/';
+        }
         router();
     });
 });
+

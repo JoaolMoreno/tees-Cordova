@@ -1,9 +1,8 @@
 document.addEventListener('deviceready', function() {
     function updateNetworkStatus() {
-        if (navigator.connection.type === Connection.NONE) {
+        var networkState = navigator.connection.type;
+        if (networkState === 'none') {
             ons.notification.alert('Você está offline. Algumas funcionalidades podem não estar disponíveis.');
-        } else {
-            // Opcional: Notificar que a conexão foi restabelecida
         }
     }
 

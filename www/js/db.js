@@ -18,7 +18,8 @@ class Database {
                     db.createObjectStore('products', { keyPath: 'id' });
                 }
                 if (!db.objectStoreNames.contains('cart')) {
-                    db.createObjectStore('cart', { keyPath: 'productId' });
+                    let cartStore = db.createObjectStore('cart', { keyPath: ['username', 'productId'] });
+                    cartStore.createIndex('username', 'username', { unique: false });
                 }
             };
 
@@ -54,19 +55,37 @@ class Database {
     }
 
     addToCart(item) {
+        // item deve incluir: { username, productId, quantity }
         return this._put('cart', item);
     }
 
-    getCartItems() {
-        return this._getAll('cart');
+    getCartItems(username) {
+        return new Promise((resolve, reject) => {
+            let transaction = this.db.transaction(['cart']);
+            let store = transaction.objectStore('cart');
+            let index = store.index('username');
+            let request = index.getAll(IDBKeyRange.only(username));
+
+            request.onsuccess = (e) => {
+                resolve(e.target.result);
+            };
+            request.onerror = (e) => reject(e);
+        });
     }
 
     updateCartItem(item) {
         return this._put('cart', item);
     }
 
-    removeCartItem(productId) {
-        return this._delete('cart', productId);
+    removeCartItem(username, productId) {
+        return new Promise((resolve, reject) => {
+            let transaction = this.db.transaction(['cart'], 'readwrite');
+            let store = transaction.objectStore('cart');
+            let request = store.delete([username, productId]);
+
+            request.onsuccess = () => resolve();
+            request.onerror = (e) => reject(e);
+        });
     }
 
     // Helper methods
